@@ -42,4 +42,8 @@ public class CustomerService
         customerRepository.deleteById(id);
         return "Id " + id + " is deleted";
     }
+
+    public Optional<CustomerData> findById(int id) {
+        return customerRepository.findById(id);
+    }
 }
