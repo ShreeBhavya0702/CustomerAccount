@@ -1,5 +1,6 @@
 package com.Bank.CustomerAccount.Entity;
 
+import jdk.jshell.Snippet;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,4 +34,5 @@ public class CustomerData
     String Address;
     String EmailId;
     String PanCard;
+
 }

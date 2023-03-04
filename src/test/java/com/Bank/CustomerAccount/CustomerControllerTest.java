@@ -52,9 +52,7 @@ public class CustomerControllerTest
         // Mockito.when(customerService.findById(Mockito.anyInt())).thenReturn(Optional.of(mockCustomer));
         int id = 10;
         given(customerService.findById(id)).willReturn(Optional.of(mockCustomer));
-
         ResultActions response = mockMvc.perform((RequestBuilder) get("/customerData/getCustomerById?id="+id));
-
         response.andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(jsonPath("$.customerName", is(mockCustomer.getCustomerName())));
