@@ -70,13 +70,28 @@ public class CustomerController
 
 
     //This Method is used for updated or altering changes to the existing customer details.
-    @PutMapping(value = "/updateCustomer")
+    /*@PutMapping(value = "/updateCustomer")
     public CustomerData updateCustomer(@RequestBody CustomerData customerData)
     {
         logger.info("Update Customer Details " + customerData);
         String message = "\nThis method is used for updating the customer details";
         FileCreation(message);
         return customerService.updateCustomer(customerData);
+    }*/
+
+    @PutMapping(value = "/updateCustomer")
+    public String updateCustomerDetails(@RequestBody CustomerData customerData) {
+
+        logger.info("Update Customer Details " + customerData);
+        String message = "\nThis method is used for updating the customer details";
+        FileCreation(message);
+       // return customerService.updateCustomer(customerData);
+
+        boolean customerPresent = customerService.updateCustomer(customerData);
+        if (customerPresent)
+            return "Customer Details Updated Successfully";
+        else
+            return "Customer not found";
     }
 
     //This Method is used for deleting customer details by specifying the id

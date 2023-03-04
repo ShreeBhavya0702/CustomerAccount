@@ -2,6 +2,7 @@ package com.Bank.CustomerAccount.Service;
 
 import com.Bank.CustomerAccount.Entity.CustomerData;
 import com.Bank.CustomerAccount.Repository.CustomerRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -33,9 +34,20 @@ public class CustomerService
         return customerRepository.findAll();
     }
 
-    public CustomerData updateCustomer(CustomerData customerData)
+    /*public CustomerData updateCustomer(CustomerData customerData)
     {
         return customerRepository.save(customerData);
+    }*/
+
+    public boolean updateCustomer(CustomerData customerData) {
+        Optional<CustomerData> oldCustomer = customerRepository.findById(customerData.getId());
+        if(oldCustomer.isPresent()){
+            BeanUtils.copyProperties(customerData,oldCustomer);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     public String deleteCustomerById(int id) {
@@ -46,6 +58,5 @@ public class CustomerService
     public Optional<CustomerData> findById(int id) {
         return customerRepository.findById(id);
     }
-
 
 }

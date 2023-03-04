@@ -35,4 +35,7 @@ public class CustomerData
     String EmailId;
     String PanCard;
 
+    public static Snippet builder() {
+        return null;
+    }
 }
