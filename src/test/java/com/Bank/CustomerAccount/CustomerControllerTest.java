@@ -24,8 +24,8 @@ import static org.mockito.BDDMockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 @WebMvcTest(value = CustomerController.class)
-public class CustomerControllerTest {
-
+public class CustomerControllerTest
+{
     @Autowired
     private MockMvc mockMvc;
 
@@ -53,10 +53,10 @@ public class CustomerControllerTest {
         int id = 10;
         given(customerService.findById(id)).willReturn(Optional.of(mockCustomer));
 
-        ResultActions response = mockMvc.perform((RequestBuilder) get("/customer/getCustomerById?id="+id));
+        ResultActions response = mockMvc.perform((RequestBuilder) get("/customerData/getCustomerById?id="+id));
 
         response.andExpect(status().isOk())
                 .andDo(print())
-                .andExpect(jsonPath("$.name", is(mockCustomer.getCustomerName())));
+                .andExpect(jsonPath("$.customerName", is(mockCustomer.getCustomerName())));
     }
 }

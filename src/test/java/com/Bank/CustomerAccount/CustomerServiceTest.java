@@ -1,6 +1,5 @@
 package com.Bank.CustomerAccount;
 
-
 import com.Bank.CustomerAccount.Entity.CustomerData;
 import com.Bank.CustomerAccount.Repository.CustomerRepository;
 import com.Bank.CustomerAccount.Service.CustomerService;
@@ -31,8 +30,8 @@ public class CustomerServiceTest {
     CustomerData mockCustomer = new CustomerData();
 
     @BeforeEach
-    public void setup(){
-
+    public void setup()
+    {
         mockCustomer.setId(10);
         mockCustomer.setCustomerName("Bhavya");
         mockCustomer.setDob(Date.valueOf("1994-02-07"));
@@ -41,18 +40,13 @@ public class CustomerServiceTest {
         mockCustomer.setAddress("Halasuru");
         mockCustomer.setEmailId("bhavyashree@gmail.com");
         mockCustomer.setPanCard("Bha1234vya");
-
     }
 
     @Test
-    public void testFindById(){
+    public void testFindById()
+    {
         given(customerRepository.findById(Mockito.anyInt())).willReturn(Optional.of(mockCustomer));
-
-        Optional<CustomerData> savedCustomer = customerService.findById(29);
-
+        Optional<CustomerData> savedCustomer = customerService.findById(10);
         assert(savedCustomer).isPresent();
     }
-
-
-
 }
