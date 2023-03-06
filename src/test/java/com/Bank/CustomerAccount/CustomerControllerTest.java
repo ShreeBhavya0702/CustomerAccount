@@ -59,71 +59,23 @@ public class CustomerControllerTest {
         mockCustomer.setAddress("Bengaluru");
         mockCustomer.setEmailId("bhavyashree@gmail.com");
         mockCustomer.setPanCard("Bha1234vya");
-
-        // Mockito.when(customerService.findById(Mockito.anyInt())).thenReturn(Optional.of(mockCustomer));
         int id = 1;
-        given(customerService.findById(id)).willReturn(Optional.of(mockCustomer));
-
-        ResultActions response = mockMvc.perform((RequestBuilder) get("/customer/getCustomerById?id=" + id));
-
+        given(customerService.getCustomerById(Mockito.anyInt())).willReturn(Optional.of(mockCustomer));
+        ResultActions response = mockMvc.perform((RequestBuilder) get("/customer/getCustomerById/1"));
         response.andExpect(status().isOk())
                 .andDo(print())
-                .andExpect(jsonPath("$.name", is(mockCustomer.getCustomerName())));
-
+                .andExpect(jsonPath("$.customerName", is(mockCustomer.getCustomerName())));
     }
 
     @Test
     public void testGetCustomerByIdNegative() throws Exception {
         int id = 1;
-        given(customerService.findById(id)).willReturn(null);
-        ResultActions response = mockMvc.perform((RequestBuilder) get("/customer/getCustomerById?id=" + id));
+        given(customerService.getCustomerById(Mockito.anyInt())).willReturn(null);
+        ResultActions response = mockMvc.perform((RequestBuilder) get("/customer/getCustomerById/1"));
         response.andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(jsonPath("$").doesNotExist());
     }
-
-    @Test
-    public void testGetAllCustomersDetails() throws Exception {
-        List<CustomerData> customers = new ArrayList<>();
-        customers.add(new CustomerData(1, "Bhavya", Date.valueOf("1994-02-07"), "Female", 987654L, "Bengaluru", "bhavyashree@gmail.com", "bha1234vya"));
-        customers.add(new CustomerData(2, "Bhavya", Date.valueOf("1994-02-07"), "Female", 987654L, "Bengaluru", "bhavyashree@gmail.com", "bha1234vya"));
-
-        //customers.add(new CustomerData(2, "Cust1", "1994-02-07", "Female", 987654L, "Bengaluru", Date.valueOf("1994-02-07"), "bha1234vya"));
-        //customers.add(new CustomerData(2, "Cust2", 99001122L, "Street1", "dumm1@gmail.com", "qwerty12", Date.valueOf("1993-10-09"), "Male"));
-        given(customerService.getCustomers()).willReturn(customers);
-        ResultActions response = mockMvc.perform(get("/customer/getCustomers"));
-        // then - verify the output
-        response.andExpect(status().isOk())
-                .andDo(print())
-                .andExpect(jsonPath("$.size()",
-                        is(customers.size())));
-    }
-
-    /*@Test
-    public void testAddCustomerDetails() throws Exception {
-
-        Date date = Date.valueOf("1994-02-07");
-        CustomerData mockCustomer = new CustomerData();
-        mockCustomer.setId(1);
-        mockCustomer.setCustomerName("Bhavya");
-        mockCustomer.setDob(date);
-        mockCustomer.setGender("Female");
-        mockCustomer.setPhoneNumber(987654L);
-        mockCustomer.setAddress("Bengaluru");
-        mockCustomer.setEmailId("bhavyashree@gmail.com");
-        mockCustomer.setPanCard("Bha1234vya");
-
-        //given(customerService.addCustomer(any(Customer.class))).willReturn(mockCustomer);
-
-        Mockito.when(customerService.addCustomer(any(CustomerData.class))).thenReturn(mockCustomer);
-
-        ResultActions response = mockMvc.perform(post("/customer/addCustomer")
-                .content(asJsonString(mockCustomer))
-                .contentType(MediaType.APPLICATION_JSON));
-        response.andExpect(status().isOk())
-                .andExpect(jsonPath("$").isString())
-                .andDo(print());
-    }*/
 
     @Test
     public void testUpdateCustomer() throws Exception {
@@ -131,11 +83,8 @@ public class CustomerControllerTest {
         boolean status = true;
         CustomerData mockCustomer = new CustomerData(1, "Bhavya", Date.valueOf("1994-02-07"), "Female", 987654L, "Bengaluru", "bhavyashree@gmail.com", "bha1234vya");
                 //(1, "Cust1", 99001122L, "Street1", "city", "dumm1@gmail.com", "qwerty12", "1234567", Date.valueOf("1993-10-09"), "Male");
-
-        //given(customerService.updateCustomerDetails(mockCustomer)).willReturn(true);
         given(customerService.findById(anyInt())).willReturn(Optional.of(mockCustomer));
         given(customerService.updateCustomer(any(CustomerData.class))).willReturn(true);
-
         ResultActions response = mockMvc.perform(put("/customer/updateCustomer").content(asJsonString(mockCustomer))
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$").isString())

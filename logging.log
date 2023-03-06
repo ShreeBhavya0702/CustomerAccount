@@ -11,3 +11,28 @@
 2023-03-04 20:03:43 INFO  CustomerService:85 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
 2023-03-04 20:08:45 INFO  CustomerService:85 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
 2023-03-04 20:08:45 INFO  CustomerService:85 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
+2023-03-04 20:23:02 INFO  CustomerService:85 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
+2023-03-04 20:23:03 INFO  CustomerService:85 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
+2023-03-06 11:26:22 INFO  CustomerService:75 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
+2023-03-06 11:26:22 INFO  CustomerService:75 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
+2023-03-06 11:30:37 INFO  CustomerService:75 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
+2023-03-06 11:30:37 INFO  CustomerService:75 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
+2023-03-06 12:13:00 INFO  CustomerService:75 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
+2023-03-06 12:13:00 INFO  CustomerService:75 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
+2023-03-06 12:20:44 INFO  CustomerService:57 - Get customer details 1
+2023-03-06 12:22:36 INFO  CustomerService:57 - Get customer details 1
+2023-03-06 12:23:21 INFO  CustomerService:57 - Get customer details 1
+2023-03-06 12:25:12 INFO  CustomerService:57 - Get customer details 1
+2023-03-06 12:26:39 INFO  CustomerService:57 - Get customer details 1
+2023-03-06 12:27:11 INFO  CustomerService:57 - Get customer details 1
+2023-03-06 12:27:11 INFO  CustomerService:75 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
+2023-03-06 12:27:11 INFO  CustomerService:75 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
+2023-03-06 12:30:33 INFO  CustomerService:57 - Get customer details 1
+2023-03-06 12:46:58 INFO  CustomerService:57 - Get customer details 1
+2023-03-06 12:46:58 INFO  CustomerService:57 - Get customer details 1
+2023-03-06 12:46:58 INFO  CustomerService:75 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
+2023-03-06 12:46:58 INFO  CustomerService:75 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
+2023-03-06 12:53:45 INFO  CustomerService:57 - Get customer details 1
+2023-03-06 12:53:45 INFO  CustomerService:57 - Get customer details 1
+2023-03-06 12:53:45 INFO  CustomerService:75 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)
+2023-03-06 12:53:45 INFO  CustomerService:75 - Update Customer Details CustomerData(id=1, CustomerName=Bhavya, Dob=1994-02-07, Gender=Female, PhoneNumber=987654, Address=Bengaluru, EmailId=bhavyashree@gmail.com, PanCard=bha1234vya)

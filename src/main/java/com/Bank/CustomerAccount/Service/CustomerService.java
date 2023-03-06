@@ -5,6 +5,8 @@ import com.Bank.CustomerAccount.Repository.CustomerRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,6 +14,9 @@ import java.util.Optional;
 @Service
 public class CustomerService
 {
+
+    private List<CustomerData> listOfCustomers = new ArrayList<>();
+
     //@Autowired enables to inject the object dependency implicitly
     @Autowired
     private CustomerRepository customerRepository;
@@ -24,20 +29,10 @@ public class CustomerService
         return customerRepository.findById(id);
     }
 
-    /*public CustomerData getCustomerByName(String customerName)
-    {
-        return customerRepository.findByName(customerName);
-    }*/
-
     public List<CustomerData> getCustomers()
     {
         return customerRepository.findAll();
     }
-
-    /*public CustomerData updateCustomer(CustomerData customerData)
-    {
-        return customerRepository.save(customerData);
-    }*/
 
     public boolean updateCustomer(CustomerData customerData) {
         Optional<CustomerData> oldCustomer = customerRepository.findById(customerData.getId());
@@ -59,4 +54,14 @@ public class CustomerService
         return customerRepository.findById(id);
     }
 
+    public List<CustomerData> getCustomerByCustomerName(String customerName) {
+        for (CustomerData customerData : listOfCustomers) {
+            if (customerName.equals(customerData.getCustomerName())) {
+                return customerRepository.findByCustomerName(customerName);
+            }
+           // throw new CustomerNotFoundException("Customer not found");
+
+        }
+        return null;
+    }
 }

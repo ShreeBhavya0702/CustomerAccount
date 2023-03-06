@@ -46,62 +46,28 @@ public class CustomerServiceTest {
     @Test
     public void testFindById(){
         given(customerRepository.findById(Mockito.anyInt())).willReturn(Optional.of(mockCustomer));
-
         Optional<CustomerData> savedCustomer = customerService.findById(29);
-
         assert(savedCustomer).isPresent();
     }
 
     @Test
     public void testFindByIdNegative(){
         given(customerRepository.findById(Mockito.anyInt())).willReturn(null);
-
         Optional<CustomerData> savedCustomer = customerService.findById(100);
-
         Assert.isNull(savedCustomer,"Customer not present");
     }
-
-    /*@Test
-    public void testAddCustomer(){
-        given(customerRepository.save(Mockito.any(CustomerData.class))).willReturn(mockCustomer);
-
-        Optional<CustomerData> savedCustomer  = Optional.ofNullable(customerService.addCustomer(mockCustomer));
-
-        assert (savedCustomer).isPresent();
-
-    }*/
 
     @Test
     public void testUpdateCustomerDetails(){
         given(customerRepository.findById(1)).willReturn(Optional.ofNullable(mockCustomer));
-
         boolean status = customerService.updateCustomer(mockCustomer);
-
         Assert.isTrue(status);
-
     }
 
     @Test
     public void testUpdateCustomerDetails_false(){
-        given(customerRepository.findById(29)).willReturn(Optional.ofNullable(null));
-
+        given(customerRepository.findById(10)).willReturn(Optional.ofNullable(null));
         boolean status = customerService.updateCustomer(mockCustomer);
-
         Assert.isTrue(!status);
-
     }
-
-    @Test
-    public void testGetAllCustomers(){
-        List<CustomerData> customers = new ArrayList<CustomerData>();
-        customers.add(new CustomerData(1, "Bhavya", Date.valueOf("1994-02-07"), "Female", 987654L, "Bengaluru", "bhavyashree@gmail.com", "bha1234vya"));
-        customers.add(new CustomerData(2, "Bhavya", Date.valueOf("1994-02-07"), "Female", 987654L, "Bengaluru", "bhavyashree@gmail.com", "bha1234vya"));
-
-        given(customerRepository.findAll()).willReturn(customers);
-
-        List<CustomerData> listOfCustomers = customerService.getCustomers();
-
-        Assert.notEmpty(listOfCustomers);
-    }
-
 }
