@@ -54,14 +54,19 @@ public class CustomerService
         return customerRepository.findById(id);
     }
 
-    public List<CustomerData> getCustomerByCustomerName(String customerName) {
+    //public List<CustomerData> getCustomerByName(String customerName) {
+     //   return customerRepository.findByName(customerName);
+    //}
+
+    /*public List<CustomerData> getCustomerByName(String customerName) {
         for (CustomerData customerData : listOfCustomers) {
-            if (customerName.equals(customerData.getCustomerName())) {
-                return customerRepository.findByCustomerName(customerName);
+            if (customerName.equals(customerData.getCustomerByName())) {
+                return customerRepository.findByName(customerName);
             }
            // throw new CustomerNotFoundException("Customer not found");
 
         }
         return null;
-    }
+    }*/
+
 }

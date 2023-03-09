@@ -60,15 +60,16 @@ public class CustomerController
         return customerService.getCustomerById(id);
     }
 
-    /*@GetMapping("/customerByName/{customerName}")
-    public CustomerData getCustomerByName(@PathVariable String customerName)
-    {
-        String message = "This method is used to get the customer by name";
+    //This Method is used for finding customer details by specifying the customer name
+   /* @GetMapping("/customerByName/{customerName}")
+    public List<CustomerData> getCustomerByName(@PathVariable String customerName) {
+        logger.info("Get Customer Details by name " +customerName);
+        String message = "\nThis method is used to get customer details by specifying the customer name";
         FileCreation(message);
         return customerService.getCustomerByName(customerName);
     }*/
 
-    //This Method is used for updated or altering changes to the existing customer details.
+    //This Method is used for update or altering changes to the existing customer details.
     @PutMapping(value = "/updateCustomer")
     public String updateCustomerDetails(@RequestBody CustomerData customerData) {
 
@@ -80,15 +81,6 @@ public class CustomerController
             return "Customer Details Updated Successfully";
         else
             return "Customer not found";
-    }
-
-    //This Method is used for finding customer details by specifying the customer name
-    @GetMapping("/customerByName/{customerName}")
-    public List<CustomerData> getAccountByAccountHolderName(@PathVariable String customerName) {
-        logger.info("Get Customer Details by name " +customerName);
-        String message = "\nThis method is used to get customer details by specifying the customer name";
-        FileCreation(message);
-        return customerService.getCustomerByCustomerName(customerName);
     }
 
     //This Method is used for deleting customer details by specifying the id

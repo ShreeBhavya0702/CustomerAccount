@@ -10,6 +10,5 @@ import java.util.List;
 @Repository
 public interface CustomerRepository extends JpaRepository<CustomerData,Integer>
 {
-    List<CustomerData> findByCustomerName(String customerName);
-    // CustomerData findByName(String customerName);
+   // List<CustomerData> findByName(String customerName);
 }
